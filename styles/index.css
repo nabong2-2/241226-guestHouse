@@ -1,7 +1,6 @@
 /* 공통 */
 #wrap {
     background-color: #FBFBFB;
-    width: 1920px;
 }
 #wrap main .container {
     background-repeat: no-repeat;
@@ -20,26 +19,25 @@
 }
 /* 개별 */
 #wrap header {
-    background-color: tan;
     height: 75px;
     display: flex; flex-flow: row nowrap;
     justify-content: space-between; align-items: center; 
     background-color: #222;
     padding: 0 80px;
 }
-#wrap header .logo {display: inline-block;}
-#wrap header .logo .logo_box {}
-#wrap header .logo .logo_box h1 {}
-#wrap header .logo .logo_box h1:first-child {
+#wrap header .logo_box {display: inline-block;}
+#wrap header .logo_box .logo {}
+#wrap header .logo_box .logo p {}
+#wrap header .logo_box .logo p:first-child {
     font-weight: 600; letter-spacing: -0.02rem;
     color: #C5E898;
 }
-#wrap header .logo .logo_box h1:nth-child(2) {
+#wrap header .logo_box .logo p:nth-child(2) {
     font-size: 1.63rem; font-weight: 700; 
     color: #EEE;
     margin: 1px  0;
 }
-#wrap header .logo .logo_box h1:last-child {
+#wrap header .logo_box .logo p:last-child {
     font-size: 0.69rem; font-weight: 600;
     color: #fff;
 }
@@ -49,7 +47,6 @@
     display: flex; flex-flow: row nowrap;
 }
 #wrap header nav ul li {
-    font-size: 1.06rem; letter-spacing:-0.02rem; font-weight: 500;
     margin-left: 70px;
 }
 #wrap header nav ul li a:hover {
@@ -57,9 +54,12 @@
 }
 #wrap header nav ul li:first-child {margin-left: 0;}
 #wrap header nav ul li:first-child a {
-    color: #C5E898; font-size: 1.19rem; font-weight: 500;
+    color: #C5E898; font-size: 1.19rem;
 }
-#wrap header nav ul li a {color: #FBFBFB;}
+#wrap header nav ul li a {
+    font-size: 1.06rem; letter-spacing:-0.02rem; font-weight: 500;
+    color: #FBFBFB;
+}
 /* 1. 메인 */
 #wrap main {}
 #wrap main .bg1 {
@@ -146,13 +146,12 @@
     justify-content: space-between;
 }
 #wrap main .bg2 .contents .rooms ul li {
-    width: 274px;
-}
-#wrap main .bg2 .contents .rooms ul li:hover {
-    background: linear-gradient(transparent,#eeeeee );
+    width: calc((100% - 84px) / 4);
 }
 #wrap main .bg2 .contents .rooms ul li a {display: block;}
-#wrap main .bg2 .contents .rooms ul li img {width: 100%;}
+#wrap main .bg2 .contents .rooms ul li img {
+    width: 100%;
+}
 #wrap main .bg2 .contents .rooms ul li .sub_title {
     display: block; margin: 20px 0;
 }
@@ -160,13 +159,28 @@
     letter-spacing:-0.03rem; font-weight: 300; line-height: 1.5;
     display: block;
 }
+#wrap main .bg2 .contents .rooms ul li:hover {
+    background: linear-gradient(180deg, transparent,#dadada );
+    position: relative; top: -5px;
+}
+#wrap main .bg2 .contents .rooms ul li:hover .sub_title {
+    font-size: 1.2rem;
+    padding: 0 10px;
+    margin: 20px 0 10px;
+}
+#wrap main .bg2 .contents .rooms ul li:hover .rooms_info
+{
+    padding: 0 10px 20px;
+    font-size: 0.90rem;
+}
 /* 3행 */
 #wrap .bg3 {
-    height: 100vh;
+    padding-bottom: 491px;
 }
 #wrap .bg3 .backimg {
+    width: auto; margin: 0;
     background-image: url(../images/main_visual12.jpg);
-    width: 1920px; height: 500px;
+    height: 500px;
     position: relative;
     padding: 129px 0; text-align: center;
 }
@@ -195,7 +209,8 @@
     background-repeat: no-repeat;
     background-position: 50%;
     background-size: cover;
-    width: 300px; height: 300px;
+    width: calc((100% - 60px) / 4);
+    height: 300px;
     padding: 0 38px;
 }
 #wrap .bg3 .backimg .contents ul li:nth-child(2) {
@@ -207,15 +222,16 @@
 #wrap .bg3 .backimg .contents ul li:last-child {
     background-image: url(../images/yang2.jpg);
 }
-#wrap .bg3 .backimg .contents ul li > p {
-    padding-top: 233px; text-align: left;
+#wrap .bg3 .backimg .contents ul li .sub_title {
+    margin-top: 233px; 
+    height: 40px;
+    text-align: left;
     background-image: url(../images/expand_circle_right.png);
     background-repeat: no-repeat;
     background-position: right;
-    background-position-y: 218px;
-}
-#wrap .bg3 .backimg .contents ul li > p .sub_title {
-    color: #FBFBFB; width: 100%; display: inline-block;
+    background-size: 18%;
+    background-position-y: -1px;
+    color: #FBFBFB; width: 100%; display: flex; align-items: center;
 }
 #wrap .bg3 .backimg .contents > p {
     font-size: 1.13rem; letter-spacing:-0.03rem; line-height: 1.5;
@@ -234,7 +250,7 @@
 #wrap .bg4 .contents > *:first-child {margin-top: 0;}
 #wrap .bg4 .contents > * {margin-top: 45px;}
 #wrap .bg4 .contents h2 {}
-#wrap .bg4 .contents .road {width: calc(100% / 1.2); align-self: center;}
+#wrap .bg4 .contents .road {width: 80%; align-self: center;}
 #wrap .bg4 .contents .road img {width: 100%;}
 #wrap .bg4 .contents .road_wrap {}
 #wrap .bg4 .contents .road_wrap .road_title {
